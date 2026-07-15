@@ -11,6 +11,7 @@ import { useResponsiveStore } from '@/stores';
 
 import { useDocUtils, useTrans } from '../hooks';
 import { Doc } from '../types';
+import { getEmojiAndTitle } from '../utils';
 
 const ItemTextCss = css`
   overflow: hidden;
@@ -41,7 +42,8 @@ export const SimpleDocItem = ({
   const { untitledDocument } = useTrans();
   const { isChild } = useDocUtils(doc);
   const { relativeDate, formatDate } = useDate();
-  const docTitle = doc.title || untitledDocument;
+  const { emoji, titleWithoutEmoji } = getEmojiAndTitle(doc.title || '');
+  const docTitle = titleWithoutEmoji || untitledDocument;
   const docRelativeUpdate = relativeDate(doc.updated_at);
   const itemAriaLabel = `${t('Open document {{title}}', { title: docTitle })}. ${t(
     'Last update: {{update}}',
@@ -121,6 +123,7 @@ export const SimpleDocItem = ({
           data-testid="doc-title"
           title={docTitle}
         >
+          {emoji && <span aria-hidden="true">{emoji} </span>}
           {docTitle}
         </Text>
 
