@@ -6,6 +6,10 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- 💄(frontend) redesign email confirmation standalone page- #2601
+
 ## [v5.5.0] - 2026-08-24
 
 ### Added
