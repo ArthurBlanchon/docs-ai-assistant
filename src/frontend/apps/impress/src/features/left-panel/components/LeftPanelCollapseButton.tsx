@@ -1,4 +1,5 @@
 import { Button } from '@gouvfr-lasuite/cunningham-react';
+import { ReactNode } from 'react';
 
 import { Text } from '@/components';
 import { FadeComponent } from '@/components/Effect';
@@ -11,11 +12,9 @@ import { useLeftPanelStore } from '../stores';
 export const LeftPanelCollapseButton = ({
   ariaLabel,
   buttonTitle,
-  buttonEmoji,
 }: {
   ariaLabel: string;
-  buttonTitle?: string;
-  buttonEmoji?: string | null;
+  buttonTitle?: ReactNode;
 }) => {
   const { isPanelOpen, togglePanel } = useLeftPanelStore();
   const { isSmallMobile } = useResponsiveStore();
@@ -38,9 +37,7 @@ export const LeftPanelCollapseButton = ({
               $size="sm"
               $weight={700}
               $color="var(--c--globals--colors--gray-1000)"
-              title={buttonTitle}
             >
-              {buttonEmoji && <span aria-hidden="true">{buttonEmoji} </span>}
               {buttonTitle}
             </Text>
           </FadeComponent>

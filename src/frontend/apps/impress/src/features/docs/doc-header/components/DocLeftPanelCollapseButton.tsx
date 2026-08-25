@@ -93,8 +93,14 @@ export const DocLeftPanelCollapseButton = () => {
   return (
     <LeftPanelCollapseButton
       ariaLabel={ariaLabel}
-      buttonTitle={shouldShowButtonTitle ? docTitle : undefined}
-      buttonEmoji={shouldShowButtonTitle ? emoji : undefined}
+      buttonTitle={
+        shouldShowButtonTitle ? (
+          <>
+            {emoji && <span aria-hidden="true">{emoji} </span>}
+            {docTitle}
+          </>
+        ) : undefined
+      }
     />
   );
 };
