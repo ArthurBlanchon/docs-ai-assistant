@@ -3,6 +3,15 @@ entries:
   docs:
   - apiVersion: v2
     appVersion: latest
+    created: "2026-09-19T09:56:15.737345395Z"
+    digest: c5904d54204e2f48662c2ecd23d6c637b74539c9d0a64af41d97477aa4d7b8b5
+    name: docs
+    type: application
+    urls:
+    - https://ArthurBlanchon.github.io/docs-ai-assistant/docs-5.7.0.tgz
+    version: 5.7.0
+  - apiVersion: v2
+    appVersion: latest
     created: "2026-08-24T09:25:02.775219206Z"
     digest: bfa4a5cafadfdf4ea16446495e6073bf79152300c16425ce0f5d1950f6c1c732
     name: docs
@@ -631,4 +640,4 @@ entries:
     urls:
     - https://suitenumerique.github.io/docs/docs-0.0.1.tgz
     version: 0.0.1
-generated: "2026-08-24T09:25:02.773063184Z"
+generated: "2026-09-19T09:56:15.735540718Z"
